@@ -78,7 +78,7 @@ python src/chat.py
 
 No chat, digite suas perguntas relacionadas ao conteúdo do documento PDF. O sistema irá:
 1. Vetorizar sua pergunta
-2. Buscar os 10 trechos mais relevantes do documento
+2. Buscar os 15 trechos mais relevantes do documento (ajuste necessário para o funcionamento esperado utilizando o Gemini)
 3. Enviar esses trechos junto com sua pergunta para o modelo de linguagem
 4. Retornar a resposta baseada apenas no conteúdo do documento
 
