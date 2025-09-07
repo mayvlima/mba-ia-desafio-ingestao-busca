@@ -1,3 +1,6 @@
+from langchain_core.prompts import PromptTemplate
+from langchain_core.output_parsers import StrOutputParser
+
 PROMPT_TEMPLATE = """
 CONTEXTO:
 {contexto}
@@ -25,5 +28,11 @@ PERGUNTA DO USUÁRIO:
 RESPONDA A "PERGUNTA DO USUÁRIO"
 """
 
-def search_prompt(question=None):
-    pass
+def search_prompt(llm=None):    
+  if not llm:
+      return None
+    
+  prompt = PromptTemplate.from_template(PROMPT_TEMPLATE)
+  chain = prompt | llm | StrOutputParser()
+    
+  return chain
